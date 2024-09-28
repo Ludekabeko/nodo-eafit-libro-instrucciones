@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Portada del Libro</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f5;
+        }
+
+        .book-cover {
+            width: 400px;
+            height: 600px;
+            background-color: #f8f4e3;
+            border: 5px solid #333;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .book-title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #3e3e3e;
+            margin-top: 40px;
+        }
+
+        .book-author {
+            font-size: 22px;
+            color: #565656;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .book-year {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .book-spine {
+            width: 100%;
+            height: 5px;
+            background-color: #333;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-cover">
+        <div class="book-title" th:text="${book.title}">Título del Libro</div>
+        <div class="book-author" th:text="${book.author}">Autor del Libro</div>
+        <div class="book-spine"></div>
+        <div class="book-year" th:text="'Publicado en ' + ${book.year}">Año de Publicación</div>
+        <div class="footer">© 2024</div>
+    </div>
+</body>
+</html>
